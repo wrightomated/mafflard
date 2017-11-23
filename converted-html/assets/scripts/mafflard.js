@@ -9,8 +9,11 @@ mouth = document.getElementById("beastMouth");
 neutral = true; // Head centre looking foward
 mouthMove = true;
 mouth.classList.add("bigMouth");
-var headAnimations=new Array("rotateFull","systemFailure","depower","rightLook");
-
+// Full list of animations
+var headAnimations=new Array("praiseSun","rotateFull","bigHead","systemFailure","depower","rightLook");
+// A list to ensure animations aren't repeated too often.
+var animationsLeft = headAnimations.slice(0);
+ // var headAnimations=new Array("praiseSun");
 /**
  * Adds an animation to an element
  *
@@ -31,26 +34,44 @@ function reAnimate(element, animationClass)
  *  @obj The object that will be given
  *  @str An extra string for the secondary object (eyes)
  */
-function giveAnimation(obj,str){
-  var tRan = Math.floor(Math.random()*headAnimations.length);
-  reAnimate(obj,headAnimations[tRan]);
-  reAnimate(eyes,str+headAnimations[tRan]);
+function giveAnimation(obj,str)
+{
+  if (animationsLeft.length == 0)
+  {
+    animationsLeft = headAnimations.slice(0);
+  }
+  var tRan = Math.floor(Math.random()*animationsLeft.length);
+  if (animationsLeft[tRan] == "systemFailure")
+  {
+    mouthMove = false;
+  }
+  else
+  {
+    mouthMove = true;
+    reAnimate(mouth,"bigMouth");
+  }
+  reAnimate(obj,animationsLeft[tRan]);
+  reAnimate(eyes,str+animationsLeft[tRan]);
+  // Remove the last used animation
+  animationsLeft.splice(tRan,1);
 }
 
-head.addEventListener("click", function(e){
-  e.preventDefault;
-  reAnimate(this,"depower");
-  mouth.classList.add("bigMouth");
-}, false);
+// head.addEventListener("click", function(e){
+//   e.preventDefault;
+//   reAnimate(this,"depower");
+//   mouth.classList.add("bigMouth");
+// }, false);
 
 /**
  * Webkit head event listener.
  */
 head.addEventListener('webkitAnimationEnd', function(event) {
   var aniName = event.animationName;
+
   if(aniName!="mouthMoveWK" && (aniName.indexOf("eye") == -1))
   {
-    giveAnimation(head,"eye");
+    setTimeout(function(){giveAnimation(head,"eye")},
+      Math.floor(Math.random()*(1500-200+1)+200));
   }
 }, false );
 

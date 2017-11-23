@@ -75,12 +75,12 @@ This stylesheet is purely for css3 animation classes.
 }
 
 .depower{
-  -webkit-animation: depowerWK 10s ease;
-  animation: depower 10s ease;
+  -webkit-animation: depowerWK 10s ease-out;
+  animation: depower 10s ease-out;
 }
 .eyedepower{
-  -webkit-animation: eyedepowerWK 10s ease;
-  animation: eyedepower 10s ease;
+  -webkit-animation: eyedepowerWK 10s ease-out;
+  animation: eyedepower 10s ease-out;
 }
 
 .eyeShift{
@@ -90,15 +90,32 @@ This stylesheet is purely for css3 animation classes.
 }
 
 .systemFailure{
-  -webkit-animation: systemFailureWK 10s ease-out;
   -webkit-animation-delay: 2s;
-  animation: systemFailure 10s ease-out;
+  -webkit-animation: systemFailureWK 5s ease-out;
+  //-webkit-animation-delay: 2s;
   animation-delay: 2s;
+  animation: systemFailure 10s ease-out;
+
 }
 
 .eyesystemFailure{
-  -webkit-animation: eyesystemFailureWK 10s ease-out;
   -webkit-animation-delay: 2s;
+  -webkit-animation: eyesystemFailureWK 5s ease-out;
+  //-webkit-animation-delay: 2s;
   animation: eyesystemFailure 10s ease-out;
   animation-delay: 2s;
+}
+
+.bigHead{
+  -webkit-animation: bigHeadWK 10s ease-out;
+  animation: bigHead 10s ease-out;
+}
+
+.eyebigHead{
+  -webkit-animation: eyebigHeadWK 10s ease-out;
+  animation: eyebigHead 10s ease-out;
+}
+
+.praiseSun{
+  -webkit-animation: praiseSunWK 10s ease-in;
 }
