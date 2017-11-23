@@ -1,0 +1,163 @@
+// Animation keyframes
+
+@keyframes lookLeft {
+  0% {
+    transform:perspective( @persDist ) rotateY(0deg);
+    left:0%;
+  }
+
+  25% {
+    transform:perspective( @persDist ) rotateY(50deg);
+    left:20%;
+  }
+
+  75% {
+    transform:perspective( @persDist ) rotateY(50deg);
+    left:20%;
+  }
+
+  100% {
+    transform:perspective( @persDist ) rotateY(0);
+    left:0%;
+  }
+}
+
+@keyframes lookRight {
+  25% {
+    transform:perspective( @persDist ) rotateY( 35deg );
+    left:@headLeft;
+  }
+  75% {
+    transform:perspective( @persDist ) rotateY(-35deg);
+    left:@headRight;
+  }
+}
+
+@keyframes eyelookRight {
+  25% {
+    left:20%;
+  }
+  75% {
+    left:10%;
+  }
+}
+
+@keyframes tiltRight {
+  50% {
+    transform:perspective( @persDist ) rotateZ( -35deg );
+    left: 3%;
+  }
+}
+
+@keyframes rotateFull {
+  75% {
+    transform:perspective( @persDist ) rotateZ( -350deg );
+    left: 0;
+  }
+  82%{
+    left:-10%;
+  }
+  90% {
+    transform:perspective( @persDist ) rotateZ( 45deg );
+    left: 0;
+  }
+}
+
+@keyframes eyerotateFull {
+  5% {
+    left: 10%;
+  }
+  74% {
+    left: 10%;
+  }
+  76%{
+    left: 20%;
+  }
+  86%{
+    left: 20%;
+  }
+  90% {
+    left:10%;
+  }
+}
+
+@keyframes mouthMove {
+  50% {
+    transform: scale(1,@mouthStretch);
+  }
+}
+
+@keyframes eyeShift {
+  25%{
+    left:10%;
+  }
+  75%{
+    left:20%;
+  }
+}
+
+@keyframes depower {
+  5% {
+    top:45%;
+  }
+}
+
+@keyframes eyedepower {
+  5% {
+    top:13%;
+  }
+  25%{
+    top:10%;
+    left:10%;
+  }
+  30%{
+    left:20%;
+  }
+  40%{
+    left:20%;
+  }
+  50%{
+    left:10%;
+  }
+  65%{
+    left:15%;
+  }
+}
+
+@keyframes systemFailure {
+  2% {
+    top:55%;
+    transform:perspective( @persDist ) rotateZ( 0 );
+  }
+  4% {
+    top:45%;
+  }
+  7%{
+    top:55%;
+    transform:perspective( @persDist ) rotateZ( 45deg );
+  }
+  //8%{
+  //  top:53%;
+  //}
+  9%{
+    top:55%;
+  }
+  12%{
+    transform:perspective( @persDist ) rotateZ( 45deg );
+  }
+  90% {
+    top:55%;
+    transform:perspective( @persDist ) rotateZ( 45deg );
+  }
+}
+
+@keyframes eyesystemFailure {
+  0% {
+    top:14%;
+    background-color: blue;
+  }
+  90% {
+    top:14%;
+    background-color: blue;
+  }
+}

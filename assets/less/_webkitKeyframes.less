@@ -1,0 +1,164 @@
+// Webkit animation keyframes
+
+@-webkit-keyframes lookLeftWK {
+  0% {
+    -webkit-transform:perspective( @persDist ) rotateY(0deg);
+    left:0%;
+  }
+
+  25% {
+    -webkit-transform:perspective( @persDist ) rotateY(50deg);
+    left:20%;
+  }
+
+  75% {
+    -webkit-transform:perspective( @persDist ) rotateY(50deg);
+    left:20%;
+  }
+
+  100% {
+    -webkit-transform:perspective( @persDist ) rotateY(0);
+    left:0%;
+  }
+}
+
+@-webkit-keyframes lookRightWK {
+  25% {
+    -webkit-transform:perspective( @persDist ) rotateY( 35deg );
+    left:@headLeft;
+  }
+  75% {
+    -webkit-transform:perspective( @persDist ) rotateY(-35deg);
+    left:@headRight;
+  }
+}
+
+@-webkit-keyframes eyelookRightWK {
+  25% {
+    left:20%;
+  }
+  75% {
+    left:10%;
+  }
+}
+
+@-webkit-keyframes tiltRightWK {
+  50% {
+    -webkit-transform:perspective( @persDist ) rotateZ( -35deg );
+    left: 3%;
+  }
+}
+
+@-webkit-keyframes rotateFullWK {
+  75% {
+    -webkit-transform:perspective( @persDist ) rotateZ( -350deg );
+    left: 0;
+  }
+  82%{
+    left:-10%;
+  }
+  90% {
+    -webkit-transform:perspective( @persDist ) rotateZ( 45deg );
+    left: 0;
+  }
+}
+
+@-webkit-keyframes eyerotateFullWK {
+  5% {
+    left: 10%;
+  }
+  74% {
+    left: 10%;
+  }
+  76%{
+    left: 20%;
+  }
+  86%{
+    left: 20%;
+  }
+  90% {
+    left:10%;
+  }
+}
+
+
+@-webkit-keyframes mouthMoveWK {
+  50% {
+    -webkit-transform: scale(1,@mouthStretch);
+  }
+}
+
+@-webkit-keyframes eyeShiftWK {
+  25%{
+    left:10%;
+  }
+  75%{
+    left:20%;
+  }
+}
+
+@-webkit-keyframes depowerWK {
+  5% {
+    top:45%;
+  }
+}
+
+@-webkit-keyframes eyedepowerWK {
+  5% {
+    top:13%;
+  }
+  25%{
+    top:10%;
+    left:10%;
+  }
+  30%{
+    left:20%;
+  }
+  40%{
+    left:20%;
+  }
+  50%{
+    left:10%;
+  }
+  65%{
+    left:15%;
+  }
+}
+
+@-webkit-keyframes systemFailureWK {
+  2% {
+    top:55%;
+    -webkit-transform:perspective( @persDist ) rotateZ( 0 );
+  }
+  4% {
+    top:45%;
+  }
+  7%{
+    top:55%;
+    -webkit-transform:perspective( @persDist ) rotateZ( 45deg );
+  }
+  //8%{
+  //  top:53%;
+  //}
+  9%{
+    top:55%;
+  }
+  12%{
+    -webkit-transform:perspective( @persDist ) rotateZ( 45deg );
+  }
+  90% {
+    top:55%;
+    -webkit-transform:perspective( @persDist ) rotateZ( 45deg );
+  }
+}
+
+@-webkit-keyframes eyesystemFailureWK {
+  0% {
+    top:14%;
+    background-color: blue;
+  }
+  90% {
+    top:14%;
+    background-color: blue;
+  }
+}
